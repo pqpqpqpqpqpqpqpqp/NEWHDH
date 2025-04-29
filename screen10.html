@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .outbox {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .inbox1 div {
+            background-color: #e3f2fd;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .inbox1 div .top {
+            color: #666;
+            font-size: 0.9em;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inbox1 div .bot {
+            font-weight: bold;
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        .inbox2 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .inbox2 div {
+            background-color: #f5f5f5;
+            margin: 0px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .inbox2 .ininbox2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .inbox2 div .top {
+            color: #1976d2;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .inbox2 div .mid {
+            padding: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .inbox2 div .bot {
+            font-size: 13px;
+            font-family: monospace;
+        }
+
+        .inbox3 {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="outbox">
+        <h1>Git Reset 이해하기</h1>
+        <p>다양한 Git Reset 옵션의 차이점을 알아보세요!</p>
+        <div class="inbox1">
+            <div>
+                <div class="top">a1b2c3d</div>
+                <div class="bot">초기 커밋</div>
+            </div>
+            <div>
+                <div class="top">b2c3d4e</div>
+                <div class="bot">로그인 기능 추가</div>
+            </div>
+            <div>
+                <div class="top">c3d4e5f</div>
+                <div class="bot">버그 수정</div>
+            </div>
+            <div>
+                <div class="top">d4e5f6g</div>
+                <div class="bot">디자인 개선</div>
+            </div>
+        </div>
+        <div class="inbox2">
+            <div class="ininbox2">
+                <div class="top">Soft Reset</div>
+                <div class="mid">변경사항을 스테이징 영역에 유지</div>
+                <div class="bot">git reset --soft HEAD~1</div>
+            </div>
+            <div class="ininbox2">
+                <div class="top">Mixed Reset</div>
+                <div class="mid">변경사항을 작업 디렉토리에 유지</div>
+                <div class="bot">git reset --mixed HEAD~1</div>
+            </div>
+            <div class="ininbox2">
+                <div class="top">Hard Reset</div>
+                <div class="mid">모든 변경사항 삭제</div>
+                <div class="bot">git reset --hard HEAD~1</div>
+            </div>
+        </div>
+        <div class="inbox3">
+            <div class="ininbox3">
+                <div class="top">Reset 결과</div>
+                <div class="mid">Soft Reset: 마지막 커밋이 취소되고, 변경사항은 스테이징 영역에 유지됩니다.</div>
+                <div class="bot">실행된 명령어: git reset --soft HEAD~1</div>
+            </div>
+            <div class="ininbox3">
+                <div class="top">Reset 결과</div>
+                <div class="mid">Mixed Reset: 마지막 커밋이 취소되고, 변경사항은 작업 디렉토리에 유지됩니다.</div>
+                <div class="bot">실행된 명령어: git reset --mixed HEAD~1</div>
+            </div>
+            <div class="ininbox3">
+                <div class="top">Reset 결과</div>
+                <div class="mid">Hard Reset: 마지막 커밋이 취소되고, 모든 변경사항이 삭제됩니다.</div>
+                <div class="bot">실행된 명령어: git reset --hard HEAD~1</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

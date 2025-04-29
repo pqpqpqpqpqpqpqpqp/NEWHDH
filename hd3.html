@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3번 게임</title>
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+
+            display: flex;
+            justify-content: center;
+
+            margin-top: 100px;
+
+        }
+
+        .main_container {
+            width: 760px;
+            height: 700px;
+
+            padding: 30px;
+
+
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+        }
+
+        .main_grid {
+            
+            /* padding: 25px; */
+
+            width: 80%;
+            height: 500px;
+
+
+            /* display: flex; */
+            /* flex */
+            /* justify-content: space-around; */
+
+
+        }
+
+        .main_grid .top_grid {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main_grid .top_grid > div {
+
+            width: 400px;
+            height: 400px;
+
+
+        }
+
+        /* .card_1 .left_1 {
+            width: 300px;
+            height: 50px;
+
+            margin: 20px;
+            padding: 5px;
+
+        } */
+
+        .card_1 .left_1,
+        .card_2 .right_1 {
+            margin: 20px 20px 20px 0px;
+            padding: 10px;
+
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 350px;
+            height: 50px;
+
+            border-radius: 8px;
+            background-color: #F6F1DE;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .input_card {
+            margin-top: 15px;
+            /* margin-left: 15px; */
+            padding-left: 15px;
+
+            background-color: #ACD3A8;
+            border-radius: 8px;
+
+            width: 745px;
+            height: 90px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_container">
+        <h1> Git 명령어 매칭 게임 </h1>
+        <h4> Git 명령어와 설명을 클릭해보세요!</h4>
+
+        <div class="main_grid">
+            <div class="top_grid">
+
+                <div class="card_1">
+
+                    <div class="left_1" onclick="click_1()" id="click_1">git init</div>
+                    <div class="left_1" onclick="click_2()" id="click_2">git add</div>
+                    <div class="left_1" onclick="click_3()" id="click_3">git commit -m "메세지"</div>
+                    <div class="left_1" onclick="click_4()" id="click_4">git status</div>
+                </div>
+
+                <div class="card_2">
+
+                    <div class="right_1" onclick="click_5()" id="click_5">새로운 Git 저장소를 초기화합니다</div>
+                    <div class="right_1" onclick="click_6()" id="click_6">모든 변경사항을 스테이징 영역에 추가합니다</div>
+                    <div class="right_1" onclick="click_7()" id="click_7">변경사항을 커밋합니다</div>
+                    <div class="right_1" onclick="click_8()" id="click_8">현재 저장소의 상태를 확인합니다</div>
+
+                </div>
+             </div>
+        
+             <div class="input_card">
+                <span id="row_1"></span><br />
+                <span id="row_2"></span>
+             </div>
+        </div>
+
+
+    </div>
+
+    <script>
+
+    
+
+        function click_1() {
+            document.getElementById('row_1').innerHTML = "git init";
+        }
+        function click_2() {
+            document.getElementById('row_1').innerHTML = "git add";
+        }
+        function click_3() {
+            document.getElementById('row_1').innerHTML = "git commit -m '메세지' ";
+        }
+        function click_4() {
+            document.getElementById('row_1').innerHTML = "git status";
+        }
+        function click_5() {
+            document.getElementById('row_2').innerHTML = "새로운 Git 저장소를 초기화합니다";
+        }
+        function click_6() {
+            document.getElementById('row_2').innerHTML = "모든 변경사항을 스테이징 영역에 추가합니다";
+        }
+        function click_7() {
+            document.getElementById('row_2').innerHTML = "변경사항을 커밋합니다";
+        }
+        function click_8() {
+            document.getElementById('row_2').innerHTML = "현재 저장소의 상태를 확인합니다";
+        }
+    </script>
+</body>
+
+</html>
